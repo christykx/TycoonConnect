@@ -50,7 +50,7 @@ function Signup() {
         console.log("Callback function when Registration form is submitted!");
         console.log("Form Values ", values);
 
-        Axios.post('http://tycoonconnectapi.onrender.com/users/signup', {
+        Axios.post('https://tycoonconnectapi.onrender.com/users/signup', {
 
             businessName: values.businessName,
             username: values.username,

@@ -81,7 +81,7 @@ function Messages() {
 
 
       
-            makeRequest.get(`http://tycoonconnectapi.onrender.com/users/conversationget/${id}`).then((response) => {
+            makeRequest.get(`https://tycoonconnectapi.onrender.com/users/conversationget/${id}`).then((response) => {
 
                 if (response.status) {
                     console.log(response?.data, "Gettingg Conversation dataaaaaaa in MAIN chat pageee");
@@ -192,7 +192,7 @@ function Messages() {
 
     function currentconv(otheruserid) {
 
-        makeRequest.get(`http://tycoonconnectapi.onrender.com/users/currentconv/${otheruserid}`).then((response) => {
+        makeRequest.get(`https://tycoonconnectapi.onrender.com/users/currentconv/${otheruserid}`).then((response) => {
 
             if (response.status) {
                 console.log(response?.data, "Gettingg current Conversation dataaaaaaa");
