@@ -45,7 +45,9 @@ function Messages() {
 
 
     useEffect(() => {
-        socket.current = io("ws://localhost:8900");
+        // socket.current = io("ws://localhost:8900");
+    setsocket(io("ws://tycoonconnectapi.onrender.com:443"));
+
         socket?.current?.on("getmsg", (data) => {
             setarrivalmessage({
                 sender: data?.senderid,
