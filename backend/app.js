@@ -34,10 +34,10 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin:[ "http://localhost:3000", "http://tycoonconnect.onrender.com"],
     methods:'*',
     credentials:true
-  })
+  }) 
 );
 
 
@@ -74,3 +74,8 @@ app.use(function(err, req, res, next) {
 app.listen(3001,()=>{
   console.log("Server Started");
 })
+
+
+// app.listen(3001,()=>{
+//   console.log("Server Started");
+// })
