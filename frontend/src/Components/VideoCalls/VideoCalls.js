@@ -36,9 +36,8 @@ function VideoCalls(props) {
 
 
   useEffect(() => {
-    // setsocket(io("ws://localhost:8900"));
-    setsocket(io("ws://tycoonconnectapi.onrender.com:443"));
-
+    setsocket(io("ws://localhost:8900"));
+    
   }, [])
 
 

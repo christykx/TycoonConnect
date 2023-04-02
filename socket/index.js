@@ -1,11 +1,12 @@
-const io = require("socket.io")(443, {
+const io = require("socket.io")(8900, {
     cors: {
-        origin: [ "https://localhost:3000", "https://tycoonconnect.onrender.com"],
+        origin: ["https://localhost:3000", "https://tycoonconnect.onrender.com"],
     },
 });
 
 let users = [];
 let peerusers = [];
+
 const addUser = (userid, socketid) => {
     !users.some((user) => user.userid === userid) &&
         users.push({ userid, socketid })
@@ -112,14 +113,14 @@ io.on('connection', (socket) => {
     })
 
 
-    
-    socket?.on("sendNotificationCount", ({receiverid,count}) => {
+
+    socket?.on("sendNotificationCount", ({ receiverid, count }) => {
         console.log(count);
         console.log(receiverid);
 
         const receiver = getUser(receiverid);
         io.to(receiver?.socketid)?.emit("getNotificationCount", {
-          count
+            count
         })
 
     })
