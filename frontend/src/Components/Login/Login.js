@@ -74,6 +74,7 @@ function Login() {
 
             let id = response.userid
             axios.get(`https://tycoonconnectapi.onrender.com/users/login/${id}`).then((res) => {
+
                 console.log("Login details", res.data);
 
                 navigate("/")

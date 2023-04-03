@@ -34,7 +34,8 @@ function Homepage() {
 
   useEffect(() => {
     // socket.current = io("ws://localhost:8900");
-    setsocket(io("ws://localhost:8900"));
+    // setsocket(io("ws://localhost:8900"));
+    setsocket(io("https://example.com:8900"));
 
     // socket.current.on("getmsg", data => {
     //     // setarrivalmessage({

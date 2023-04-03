@@ -45,7 +45,9 @@ function Messages() {
 
 
     useEffect(() => {
-        socket.current = io("ws://localhost:8900");
+        // socket.current = io("ws://localhost:8900");
+        socket.current = io("https://example.com:8900");
+
         
         socket?.current?.on("getmsg", (data) => {
             setarrivalmessage({

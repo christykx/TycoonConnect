@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 function verify(req, res, next) {
 
 
-    const authHeader = req.cookies.accessToken;
+    const authHeader = req.cookies?.accessToken;
 
     console.log(req.cookies.accessToken, "@@@@@@@@@@@@@@@@@@@@@@@@22");
     if (authHeader) {
