@@ -37,7 +37,7 @@ app.use(
   cors({
     // origin: ["https://localhost:3000", "https://tycoonconnect.onrender.com"],
 
-    origin: ["https://localhost:3000"],
+    origin: ["http://localhost:3000"],
     methods: '*',
     credentials: true
   })
