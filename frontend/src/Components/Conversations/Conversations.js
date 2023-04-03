@@ -25,7 +25,8 @@ function Conversations({friends}) {
     useEffect(() => {
 
 
-        makeRequest.get(`https://tycoonconnectapi.onrender.com/users/conversationget/${id}`).then((response) => {
+        // makeRequest.get(`https://tycoonconnectapi.onrender.com/users/conversationget/${id}`).then((response) => {
+        makeRequest.get(`/users/conversationget/${id}`).then((response) => {
 
         if (response.status) {
             console.log(response?.data, "Gettingg Conversation dataaaaaaa");

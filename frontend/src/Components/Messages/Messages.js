@@ -45,8 +45,8 @@ function Messages() {
 
 
     useEffect(() => {
-        // socket.current = io("ws://localhost:8900");
-        socket.current = io("https://example.com:8900");
+        socket.current = io("ws://localhost:8900");
+        // socket.current = io("https://example.com:8900");
 
         
         socket?.current?.on("getmsg", (data) => {
@@ -84,7 +84,7 @@ function Messages() {
 
 
       
-            makeRequest.get(`https://tycoonconnectapi.onrender.com/users/conversationget/${id}`).then((response) => {
+            makeRequest.get(`/users/conversationget/${id}`).then((response) => {
 
                 if (response.status) {
                     console.log(response?.data, "Gettingg Conversation dataaaaaaa in MAIN chat pageee");
@@ -195,7 +195,7 @@ function Messages() {
 
     function currentconv(otheruserid) {
 
-        makeRequest.get(`https://tycoonconnectapi.onrender.com/users/currentconv/${otheruserid}`).then((response) => {
+        makeRequest.get(`/users/currentconv/${otheruserid}`).then((response) => {
 
             if (response.status) {
                 console.log(response?.data, "Gettingg current Conversation dataaaaaaa");

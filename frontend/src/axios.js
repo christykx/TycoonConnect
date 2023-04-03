@@ -2,7 +2,8 @@ import axios from "axios";
 
 
 export const makeRequest = axios.create({
-    baseURL:"https://tycoonconnectapi.onrender.com",
-    // "http://localhost:3001"
+             
+    baseURL:"http://localhost:3001",
+    // "https://tycoonconnectapi.onrender.com",
     withCredentials:true
 })

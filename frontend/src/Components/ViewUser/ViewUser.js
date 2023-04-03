@@ -235,7 +235,7 @@ function ViewUser() {
   function following(otheruserid) {
     console.log(otheruserid, "This is another user id");
     console.log(id, "This is my account id");
-    makeRequest.post('https://tycoonconnectapi.onrender.com/users/conversation', { userid: id, otheruserid }).then((response) => {
+    makeRequest.post('/users/conversation', { userid: id, otheruserid }).then((response) => {
 
       if (response.status) {
         console.log(response?.data, "Get Conversation dataaaaaaa");

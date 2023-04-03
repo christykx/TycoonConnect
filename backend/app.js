@@ -11,7 +11,7 @@ const adminRouter = require('./routes/admin');
 
 const app = express();
 
-const cors=require('cors')
+const cors = require('cors')
 const db = require('./config/connection')
 
 
@@ -25,7 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+// app.use(express.static(path.join(__dirname, 'public', './frontend/build')));
+// app.set('*',path.join(__dirname,'./frontend/build/index.html'))
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", true);
@@ -34,10 +35,12 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin:[ "https://localhost:3000", "https://tycoonconnect.onrender.com"],
-    methods:'*',
-    credentials:true
-  }) 
+    // origin: ["https://localhost:3000", "https://tycoonconnect.onrender.com"],
+
+    origin: ["https://localhost:3000"],
+    methods: '*',
+    credentials: true
+  })
 );
 
 
@@ -55,12 +58,12 @@ db.connect((err) => {
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -71,7 +74,7 @@ app.use(function(err, req, res, next) {
 });
 
 // module.exports = app;
-app.listen(3001,()=>{
+app.listen(3001, () => {
   console.log("Server Started");
 })
 
